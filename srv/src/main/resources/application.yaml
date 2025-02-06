@@ -1,0 +1,35 @@
+spring:
+  config.activate.on-profile: default
+  sql.init.schema-locations: classpath:schema-h2.sql
+  web.resources.static-locations: file:./app/
+cds:
+  data-source.auto-config.enabled: false
+  security:
+    mock.users:
+      alice:
+        roles: [ admin, support ]
+      bob:
+        roles: [ support ]
+  remote.services:
+    API_BUSINESS_PARTNER:
+      type: "odata-v2"
+      destination:
+        name: "s4-business-partner-api"
+---
+management:
+  endpoint:
+    health:
+      show-components: always
+      probes:
+        enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health
+  health:
+    defaults:
+      enabled: false
+    ping:
+      enabled: true
+    db:
+      enabled: true
