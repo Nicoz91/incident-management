@@ -27,6 +27,12 @@
         "toggles": true
       },
       "workzone": true
+    },
+    "log": {
+      "levels": {
+        "sqlite": "debug",
+        "cds": "info"
+      }
     }
   }
 }

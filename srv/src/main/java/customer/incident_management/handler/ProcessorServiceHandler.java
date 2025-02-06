@@ -71,6 +71,7 @@ public class ProcessorServiceHandler implements EventHandler {
         Incidents in = db.run(Select.from(Incidents_.class).where(i -> i.ID().eq(incident.getId())))
                 .single(Incidents.class);
         if (in.getStatusCode().equals("C")) {
+            logger.info("Incident {} has already been closed", incident.getId());
             throw new ServiceException(ErrorStatuses.CONFLICT, "Can't modify a closed incident");
         }
 
