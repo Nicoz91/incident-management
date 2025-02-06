@@ -11,11 +11,6 @@
     "app/incidents"
   ],
   "dependencies": {
-    "@cap-js/telemetry": ">=0",
-    "@grpc/grpc-js": "^1",
-    "@opentelemetry/exporter-metrics-otlp-grpc": "^0",
-    "@opentelemetry/exporter-trace-otlp-grpc": "^0",
-    "@opentelemetry/host-metrics": "^0",
     "@sap-cloud-sdk/connectivity": "^3.26.0",
     "@sap-cloud-sdk/http-client": "^3.26.0",
     "@sap-cloud-sdk/resilience": "^3.26.0",
@@ -31,13 +26,7 @@
         "extensibility": true,
         "toggles": true
       },
-      "workzone": true,
-      "cloud-logging": true,
-      "[production]": {
-        "telemetry": {
-          "kind": "to-cloud-logging"
-        }
-      }
+      "workzone": true
     },
     "log": {
       "levels": {
