@@ -25,6 +25,7 @@ class IncidentsODataTests {
     @Autowired
     private MockMvc mockMvc;
 
+    
     /**
     * Test GET Api for Incidents
     * @throws Exception
